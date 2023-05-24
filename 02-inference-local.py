@@ -1,17 +1,14 @@
-# process.py
-
+#
+# inference.py
+#
+# Load the train model and make an inference.
+#
 import numpy as np
 import tensorflow as tf
 from tensorflow import keras
 
 Tokenizer = tf.keras.preprocessing.text.Tokenizer
 pad_sequences = tf.keras.preprocessing.sequence.pad_sequences
-# Sequential = tf.keras.models.Sequential
-# Embedding = tf.keras.layers.Embedding
-# SimpleRNN = tf.keras.layers.SimpleRNN
-# Dense = tf.keras.layers.Dense
-# LSTM = tf.keras.layers.LSTM
-# Dropout = tf.keras.layers.Dropout
 
 # Load your text data
 # Here I'm simply loading a relative file which contains the array of data (data.py)
@@ -21,22 +18,7 @@ from data import text_data_arr
 tokenizer = Tokenizer(char_level=True, lower=True)
 tokenizer.fit_on_texts(text_data_arr)
 
-# Convert text to sequences
-# sequences = tokenizer.texts_to_sequences(text_data_arr)[0]
-
-# Prepare input and target sequences
-# input_sequences = []
-# output_sequences = []
-
 sequence_length = 100
-# for i in range(len(sequences) - sequence_length):
-#     input_sequences.append(sequences[i:i + sequence_length])
-#     output_sequences.append(sequences[i + sequence_length])
-
-# input_sequences = np.array(input_sequences)
-# output_sequences = np.array(output_sequences)
-
-# vocab_size = len(tokenizer.word_index) + 1
 
 model = keras.models.load_model("model/1")
 model.summary()

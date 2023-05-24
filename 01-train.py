@@ -1,4 +1,8 @@
-# process.py
+#
+# train.py
+#
+# Train and save the model in Tensorflow's "saved_model" format.
+#
 
 import numpy as np
 import tensorflow as tf
