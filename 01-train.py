@@ -56,7 +56,7 @@ model.fit(input_sequences, output_sequences, epochs=epochs, batch_size=batch_siz
 #
 # Save the model.
 #
-model.save("model")
+model.save("model/1")
 
 # Evaluate the model and generate text:
 def generate_text(seed_text, model, tokenizer, sequence_length, num_chars_to_generate):
